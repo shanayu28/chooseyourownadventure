@@ -1,0 +1,276 @@
+/*file name: chooseyourstory.ch
+final, player chooses how the game goes */
+
+//declarations
+string_t introans;
+string_t cname;
+string_t opt1ans;
+string_t opt2ans;
+string_t opt3ans;
+string_t roadmap;
+int s;
+int b;
+string_t fname;
+
+//initialize
+s = randint(1,10);
+b = randint(110,118);
+
+//intro to game
+//asks name and generates 1 rand num
+//road map
+void intro(){
+    printf("Hello, Welcome to SnickerDoodles!\n");
+    printf("In SnickerDoodles, you've signed up to bring %d dozen snickerdoodles\nfor the fundraiser your work is hosting.\n", s);
+    printf("After spending hours this morning, you finally have them boxed and\nready to go.\n"); 
+    printf("Now all you have to do is get there before 3pm with all your cookies.\n");
+    printf("And you better be on time, your job is on the line.\n");
+    printf("Oh and also, you're meeting up with your intern beforehand.\n");
+    printf("  what's your intern's name?\n");
+    scanf("%s", &fname);
+    printf("So don't forget to meet up with %s.\n", fname);
+    printf("Before you go, what's your name.\n");
+    scanf("%s", &cname);
+    printf("Nice to meet you %s. Would you like to see a roadmap before you start?\n", cname);
+    do{
+        printf("press 1 for yes, press 2 for no.\n");
+        scanf("%s", &roadmap);
+        if( roadmap == "1"){
+            printf("\n                                   SnickerDoodles Guide\n");
+            printf("               1.                           2.                            3.\n");
+            printf("           drive car                        |                           walk\n");
+            printf("        /      |     \\                  take bus                   /      |      \\\n");
+            printf("      turn     go    turn          /        |          \\        Rivers  follow   Hefty\n");
+            printf("      right straight left      get off      |       get off      path   highway  street\n"); 
+            printf("                            at last stop    |   at first stop\n");
+            printf("                                         get off\n");
+            printf("                                      at second stop\n");           
+        } 
+    }while(roadmap != "1"&& roadmap != "2");
+    printf("\nAlright, pick a number to continue\n");
+    do{
+        printf("Do you choose 1, 2, or 3\n");
+        scanf("%s", &introans);
+    }while(introans != "1"&& introans != "2"&& introans != "3");
+}
+
+//option 1 after intro, player drives car
+void option1(){
+    printf("Ok %s, while getting ready, you decided to just take your car.\n", cname);
+    printf("You buckle in the cookies, and go pick up %s.\n", fname);
+    printf("15 minutes in, your phone dies and you forgot to bring a charger.\nLeaving you with no GPS.\n");
+    printf("You ask %s if they knows where to go or has a gps, and they says no.\n", fname);
+    printf("You've reached a four way, you have to make a decision.\n");
+    printf("%s, thinks you should turn right.\n", fname);
+    printf("Which way should you go?\n");
+    do{ 
+        printf("Choose 1, 2, or 3\n");
+        scanf("%s", &opt1ans);
+    }while(opt1ans != "1"&& opt1ans != "2"&& opt1ans != "3");
+}
+//if player chooses 1
+//turns right, ends being late and losing job 
+void endOne1(){
+    printf("At the stop, you decided to follow %s and turn right.\n", fname);
+    printf("Hmm, it seems like you're driving further away from the place.\n");
+    printf("%s assures you its the right way. But you know how %s can be.\n", fname, fname);
+    printf("So you pull over to ask directions from the cashier at the gas station.\n");
+    printf("He tells you that the fundraiser is all the way on the otherside of town\n");
+    printf("OMG, it was only a 30 minute drive, now it's gonna take you at least an hour to get there.\n");
+    printf("You quickly get in your car and speed off(within the speed limit of course)\n");
+    printf("When you finally get there, your boss is furious that you're 40 minutes late.\n");
+    printf("After getting trying to explain what happened, he doesn't have any empathy.\n");
+    printf("Sorry %s, you listened to %s and ended up failing to complete the task :(\n", cname, fname);
+}
+//if player chooses 2 
+//goes straight, gets stuck in traffic with a concert, and gets fired
+void endTwo1(){
+    printf("You decided to go straight.\n");
+    printf("As you're driving, all the cars come to a stop.\n");
+    printf("OhNo %s, you're stuck in traffic and you're gonna be late.\n", cname);
+    printf("While you're praying for traffic to clear up, you hear loud music playing.\n");
+    printf("Everybody starts getting outta their car, so you and %s step outside to see what's up.\n", fname);
+    printf("HOLYSMOKES, you just stopped in the middle of James Cordon's CrossWalk Musical!\n");
+    printf("!!With Harry Styles performing!!\n");
+    printf("While jamming out, you totally forget about the fundraiser and start to recieve\nangry phone calls from your boss.\n");
+    printf("He's screaming \"YOU'RE FIRED\" through the phone.\n");
+    printf("Yikes %s, you got distracted and failed to complete the task :(.\n", cname);
+     
+}
+//if player chooses 3
+//turns left, gets there early, gets promotion
+void endThree1(){
+    printf("You decided to turn left \n");
+    printf("AMAZING, you picked the fastest way to the fundraiser.\n");
+    printf("You managed to dodge traffic and arrive at the fundraiser 15 minutes early.\n");
+    printf("You see your boss there. And he comes up to tell you something important.\n");
+    printf("He says \"%s, I knew I could count on you. This just assures me that picking you for manager is the right choice\".\n", cname);
+    printf("CONGRATULATIONS %s, YOU COMPLETED THE OBEJCTIVE!!\n", cname);    
+    printf("You got all cookies to the fundraiser on time, and even got a promotion. Nice job!\n");
+}
+
+
+
+
+
+
+
+
+//option 2 after intro, player takes bus
+
+void option2(){
+    printf("Ok %s, you've chosen to take the bus.\n", cname);
+    printf("Before you leave you search up which bus you need to take.\n");
+    printf("You need to take bus %d.\n", b);
+    printf("You and %s, get on the bus together.\n", fname);
+    printf("As you get closer, you realize there are three stops close to the fundraiser.\n");
+    printf("You ask %s, if they know where to get off at.\n", fname);
+    printf("Oh snap, %s doesn't know which one and neither do you.\n", fname);
+    printf("What do you do now?\n");
+    do{
+        printf("Do you choose 1, 2, or 3\n");
+        scanf("%s", &opt2ans);
+    }while(opt2ans != "1"&& opt2ans != "2"&& opt2ans != "3");
+}
+//if player chooses 1, bus
+//last stop, spill cookies otw, loses
+void endOne2(){
+    printf("You stay on till the last stop.\n");
+    printf("At the first stop, a mom and her kid come on.\n");
+    printf("So you and %s, give them your seats and stand the rest of the way.\n", fname);
+    printf("You guys hold on tight to the grip handle, and try hard to not drop the cookies.\n");
+    printf("Outta nowhere, the bus driver skrts to a hard stop.\n");
+    printf("You and the cookies fly foward, leaving snickerdoodles all over the bus floor.");
+    printf("You and %s, clean up the mess.\nBut omg what're going to do now?\n", fname);
+    printf("Luckily, %s offers to share the credit for their pies that they brought, so you don't go empty handed.\n", fname);
+    printf("Mmm sorry %s, despite %s's kind gesture, you still failed to finish the task :(\n", cname, fname);
+}
+//if player chooses 2, bus
+//second stop, late, fails tasks
+void endTwo2(){
+    printf("At the second stop you and %s get off.\n", fname);
+    printf("Ahh, you finally made, and all you have to do is walk to the fundraiser.\n");
+    printf("When you get there you don't see anyone from work there.\n");
+    printf("%s asks you if is this is right place?\n", fname);
+    printf("You double check the address.\n");
+    printf("OMG, you realize there are two of the same places but at different areas.\n");
+    printf("Ugh, you and %s now have to wait till the next bus which is about an hour from now.\n", fname);
+    printf("Sorry %s, you were late to the fundraiser, failing to complete the task :(\n", cname);
+}
+//if player chooses 3, bus
+//first stop 
+void endThree2(){
+    printf("You decided to get off at the first stop.\n");
+    printf("Right before you guys get off, you get into a heated argument with %s.\n", fname);
+    printf("You find out that they've been talking smack about you to the other interns.\n");
+    printf("You both angrily get off the bus, and start walking towards the fundraiser.\n");
+    printf("OHNO, where are the cookies!?!?\n");
+    printf("You guys were busy agruing that you forgot the cookies on the bus.\n");
+    printf("Sorry %s, you failed to complete the task :(\n", cname);
+}
+    
+
+
+
+
+
+//option 3 after intro, player chooses to walk
+
+
+void option3(){
+    printf("Oh wow, you actually chose to walk.\n");
+    printf("It's such a nice and sunny day for a walk.\n");
+    printf("You put on some comfy shoes and get ready to head out.\n");
+    printf("Before you go out the door. You make a mental plan of\nwhere you're gonna go.\n");
+    printf("What's your plan?\n");
+    do{
+        printf("pick 1, 2, or 3\n");
+        scanf("%s", &opt3ans);
+    }while(opt3ans !="1" && opt3ans !="2" && opt3ans !="3");
+}
+// if player chooses 1 for Rivers Path
+//attacked by seagulls, fails tasks
+void endOne3(){
+    printf("You chose Rivers Path.\n");
+    printf("Ahh, rivers path is such a beautiful area.\n");
+    printf("While walking, you admire the little plants and the ducks in the river.\n");
+    printf("When outta nowhere, A HUGE SWARM OF SEAGULLS ATTACK YOU FOR YOUR COOKIES!\n");
+    printf("You and %s try your best to swat them away, but they're too strong.\n", fname);
+    printf("After they've eaten every single crumb, they finally leave.");
+    printf("Wow, even with the cookies gone, you decide to go to the fundraiser anyways.\n");
+    printf("Sorry %s, even though you were on time you failed to bring the cookies :(\n", cname);    
+}
+//if player chooses 2 for the highway
+//completed objective
+void endTwo3(){
+    printf("You chose to follow the highway.\n");
+    printf("10 mins into your walk. You meet up with %s.\n", fname);
+    printf("Half way through your walk, you guys run into a group of teenagers.\n");
+    printf("They threaten you for your cookies. You're quaking in your boots.\n");
+    printf("You decide to just give them the cookies. But before you can, %s intervenes.\n", fname);
+    printf("Next thing you know, %s starts beating them up.\n", fname);
+    printf("WOW, you never knew %s used to do muay thai.\n");
+    printf("After all that, you finally get to the fundraiser on time with all the cookies in hand.\n");
+    printf("Your boss is estatic to see you finally made it.\n");
+    printf("Whew, thank god for %s.\n", fname);
+    printf("Nice job %s, you completed the objective!\n", cname);
+    
+}  
+//if player chooses 3 for hefty street,
+//fails tasks, tripped and spilt cookies
+void endThree3(){
+    printf("Nice, hefty street is just straight ahead.\n");
+    printf("As you walk out the door, OHNO!\n");
+    printf("You tripped on the way out. Spilling all your cookies in hand.\n");
+    printf("You sit there in aw.\n");
+    printf("You say to yourself, \"Heck it nvm\". And you just call your boss saying you got sick.\n");
+    printf("Luckily, your boss is in a good mood and says, \"It's no problem\".\n");
+    printf("Despite saving your job, you still failed to complete the objective :(.\n");
+  
+}
+    
+
+
+
+
+
+int main(){
+intro();
+if(introans == "1"){
+    option1();
+    if(opt1ans == "1"){
+        endOne1();
+    }
+    if(opt1ans == "2"){
+        endTwo1();
+    }
+    if(opt1ans == "3"){
+        endThree1();
+    } 
+}
+if(introans == "2"){
+    option2();
+    if(opt2ans == "1"){
+    endOne2();
+    }
+    if(opt2ans == "2"){
+    endTwo2();
+    }
+    if(opt2ans == "3"){
+    endThree2();
+    }
+}
+if(introans == "3"){
+    option3();
+    if(opt3ans == "1"){
+    endOne3();
+    }
+    if(opt3ans == "2"){
+    endTwo3();
+    }
+    if(opt3ans == "3"){
+    endThree3();
+    }
+}
+
+}
